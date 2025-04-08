@@ -1,0 +1,147 @@
+/* === Base Section Styles === */
+.projects {
+  background: linear-gradient(to right, #f9f9f9, #f1f2f6);
+  text-align: center;
+  padding: 80px 20px;
+  animation: fadeInMain 1.2s ease forwards;
+  opacity: 0;
+}
+
+.projects h2 {
+  font-size: 2.8rem;
+  color: #2c3e50;
+  margin-bottom: 40px;
+  animation: popIn 0.8s ease-in-out;
+}
+
+.project-subheading {
+  font-size: 1.8rem;
+  margin: 50px 0 20px;
+  color: #444;
+  text-align: left;
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  border-left: 5px solid #00bcd4;
+  animation: fadeInLeft 1s ease;
+}
+
+/* === Grid Container === */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  animation: slideInGrid 1.2s ease-in-out;
+}
+
+/* === Project Card Styling === */
+.project-card {
+  background: #ffffffcc;
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  animation: floatUp 1s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  border: 1px solid #00bcd4;
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-card h4 {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  font-size: 0.95rem;
+  color: #666;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 12px;
+  text-decoration: none;
+  color: #00bcd4;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.project-card a:hover {
+  color: #007c91;
+  text-shadow: 0 0 5px rgba(0, 188, 212, 0.6);
+}
+
+/* === Animations === */
+@keyframes fadeInMain {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInGrid {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floatUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

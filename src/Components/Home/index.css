@@ -1,0 +1,29 @@
+.home {
+    background: linear-gradient(120deg, #00bcd4, #3f51b5);
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 2s ease;
+  }
+  
+  .home h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+  
+  .home p {
+    font-size: 1.3rem;
+    margin-top: 10px;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  a{
+    color :aliceblue
+  }
