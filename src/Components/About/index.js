@@ -12,7 +12,7 @@ class About extends Component {
           <div className="about-text">
             <h2>About Me</h2>
             <p>
-              I'm a <strong>Frontend Developer</strong> skilled in <strong>React.js</strong>, passionate about building clean, responsive, and interactive web applications.
+              I'm a <strong>Web Developer</strong> skilled in <strong>React.js</strong>, passionate about building clean, responsive, and interactive web applications.
             </p>
             <p>
               I'm also a <strong>Thumbnail Designer</strong> 🖌️ with experience in crafting eye-catching visuals for YouTube videos and digital media. My designs are optimized to grab attention and increase engagement.
@@ -24,7 +24,7 @@ class About extends Component {
               Whether you're a student, professional, or lifelong learner, there's always something new to discover with us.
             </p>
             <a
-              href="https://www.youtube.com/@LNSkillSquad"
+              href="https://www.youtube.com/@Lakshminarayana-wh1rr"
               target="_blank"
               rel="noopener noreferrer"
               className="youtube-btn"

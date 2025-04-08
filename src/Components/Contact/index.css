@@ -105,7 +105,7 @@
       transform: scale(1);
     }
   }
-/* Thank You Message */
+
 .thank-you {
     background-color: #e0f7fa;
     color: #00796b;
@@ -117,7 +117,7 @@
     animation: fadeInContact 1s ease;
   }
   
-  /* Glassmorphism Form Style */
+
   .contact form {
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(14px);
