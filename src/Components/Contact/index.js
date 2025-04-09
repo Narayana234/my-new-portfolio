@@ -1,82 +1,50 @@
 import React, { Component } from 'react';
 import './index.css';
-
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
+import emailjs from '@emailjs/browser';
 class Contact extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-      submitted: false
-    };
+    this.formRef = React.createRef();
   }
 
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  handleSubmit = (e) => {
+  sendEmail = (e) => {
     e.preventDefault();
-    this.setState({
-      name: '',
-      email: '',
-      message: '',
-      submitted: true
-    });
 
-    // Optionally: set timeout to remove thank you message
-    setTimeout(() => {
-      this.setState({ submitted: false });
-    }, 4000);
-  };
+    emailjs.sendForm(
+      'service_lem4c7e',
+      'template_wbvgbyt',
+      this.formRef.current,
+      'e9uEw5dzX3jeL5CKu'
+    )
+    .then((result) => {
+      alert('Message sent successfully!');
+      this.formRef.current.reset();
+    }, (error) => {
+      alert('Failed to send message. Please try again.');
+    });
+  }
 
   render() {
-    const { name, email, message, submitted } = this.state;
-
     return (
-      <section id="contact" className="contact">
-        <h2>Contact Me</h2>
+      <section id="contact" className="contact-section">
+        <h2 className="contact-title">Contact Me</h2>
 
-        {submitted && <p className="thank-you">Thanks for reaching out! 💌</p>}
-
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={name}
-            onChange={this.handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={email}
-            onChange={this.handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            rows="5"
-            value={message}
-            onChange={this.handleChange}
-            required
-          />
-          <button type="submit">Send</button>
+        <form ref={this.formRef} onSubmit={this.sendEmail} className="contact-form">
+          <input type="text" name="user_name" placeholder="Your Name" required />
+          <input type="email" name="user_email" placeholder="Your Email" required />
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
         </form>
-
-        <div className="social-links">
+        <div className="social-links fade-in">
           <a href="https://www.linkedin.com/in/lakshminarayana-59245a247/" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-linkedin"></i>
+            <FaLinkedin />
           </a>
           <a href="https://github.com/Narayana234" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-github"></i>
+            <FaGithub />
           </a>
           <a href="mailto:amlnarayana7207@gmail.com">
-            <i className="fas fa-envelope"></i>
+            <FaEnvelope />
           </a>
         </div>
       </section>
